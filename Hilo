@@ -9,16 +9,14 @@ g++ -o hilo3 hilo3.cpp -lpthread
 if [ $? -eq 0 ]; then
     echo "Compilación exitosa. Ejecutando los hilos..."
 
-    # Ejecutar hilo1 en el núcleo 0
-    taskset -c 0 ./hilo1 &
+    # Ejecutar los programas en segundo plano
+    ./hilo1 &
     PID1=$!
 
-    # Ejecutar hilo2 en el núcleo 1
-    taskset -c 1 ./hilo2 &
+    ./hilo2 &
     PID2=$!
 
-    # Ejecutar hilo3 en el núcleo 2
-    taskset -c 2 ./hilo3 &
+    ./hilo3 &
     PID3=$!
 
     # Esperar a que todos los procesos finalicen
@@ -30,13 +28,3 @@ if [ $? -eq 0 ]; then
 else
     echo "Error en la compilación. Por favor, corrige los errores antes de ejecutar los programas."
 fi
-
-#include<iostream>
-using namespace std;
-
-int main(){
-	
-	cout<<"Se ha puesto a correr el determinante"
-	
-	return 0;
-}
