@@ -30,3 +30,13 @@ if [ $? -eq 0 ]; then
 else
     echo "Error en la compilación. Por favor, corrige los errores antes de ejecutar los programas."
 fi
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	
+	cout<<"Se ha puesto a correr el determinante"
+	
+	return 0;
+}
